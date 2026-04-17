@@ -1,43 +1,39 @@
-import { lazy, Suspense } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import Navigation from './components/Navigation';
 import './App.css';
-
-// Lazy-load each page so Vite emits a separate chunk per route.
-// The browser only downloads a page's chunk when the user navigates to it.
-const YTDSummaryPage = lazy(() => import('./pages/YTDSummaryPage'));
-const ProjectsPage   = lazy(() => import('./pages/ProjectsPage'));
-const FinancialsPage = lazy(() => import('./pages/FinancialsPage'));
-const ResourcesPage  = lazy(() => import('./pages/ResourcesPage'));
-const TeamPage  = lazy(() => import('./pages/TeamPage'));
 
 const App = () => {
   return (
-    <div className="appShell">
+    <div className="landingPage">
       <header className="topbar">
-        <div className="brand">
-          <div className="brandMark">CPC</div>
-          <div>
-            <div className="brandTitle">Chase Pays Cash</div>
-            <div className="brandSub">Analytics Dashboard</div>
-          </div>
-        </div>
+        <a className="brandTitle" href="#home">JAH Consulting LLC</a>
+        <nav className="topNav" aria-label="Page sections">
+          <a href="#services">Services</a>
+          <a href="#previous-work">Previous Work</a>
+          <a href="#about-me">About Me</a>
+          <a href="#contact-me">Contact Me</a>
+        </nav>
       </header>
-      <div className="body">
-        <Navigation />
-        <main className="content">
-          <Suspense fallback={<div className="pageHeader" role="status" aria-live="polite"><p className="muted">Loading…</p></div>}>
-            <Routes>
-              <Route path="/" element={<YTDSummaryPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/financials" element={<FinancialsPage />} />
-              <Route path="/resources" element={<ResourcesPage />} />
-              <Route path="/team" element={<TeamPage />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </Suspense>
-        </main>
-      </div>
+
+      <main id="home" className="content">
+        <section id="services" className="sectionCard">
+          <h2>Services</h2>
+          <p>Coming soon — consulting services and engagement options.</p>
+        </section>
+
+        <section id="previous-work" className="sectionCard">
+          <h2>Previous Work</h2>
+          <p>Coming soon — featured projects and delivered outcomes.</p>
+        </section>
+
+        <section id="about-me" className="sectionCard">
+          <h2>About Me</h2>
+          <p>Coming soon — background, expertise, and consulting philosophy.</p>
+        </section>
+
+        <section id="contact-me" className="sectionCard">
+          <h2>Contact Me</h2>
+          <p>Coming soon — preferred contact methods and response details.</p>
+        </section>
+      </main>
     </div>
   );
 };
