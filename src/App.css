@@ -24,7 +24,7 @@ body {
   color: var(--text);
   background:
     linear-gradient(rgba(10, 10, 28, 0.78), rgba(10, 10, 28, 0.86)),
-    url("./assets/logo.png") center / cover fixed no-repeat,
+    url("./assets/landing-background.svg") center / cover fixed no-repeat,
     linear-gradient(120deg, var(--bg-dark), var(--bg-mid) 45%, var(--bg));
 }
 
