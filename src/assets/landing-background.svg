@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Aerial view of a winding river through green forests at sunset">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7b267"/>
+      <stop offset="38%" stop-color="#f79d65"/>
+      <stop offset="100%" stop-color="#3b6a57"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="72%" cy="18%" r="38%">
+      <stop offset="0%" stop-color="#ffd9a0" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffd9a0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#99d8ff"/>
+      <stop offset="55%" stop-color="#7fbbe5"/>
+      <stop offset="100%" stop-color="#5b8fb7"/>
+    </linearGradient>
+    <filter id="softNoise" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="7"/>
+      <feColorMatrix type="saturate" values="0.25"/>
+      <feBlend mode="soft-light" in2="SourceGraphic"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.18"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <rect width="1920" height="1080" fill="url(#sunGlow)"/>
+
+  <g opacity="0.92">
+    <path fill="#2c5f46" d="M0 360l220 70 180-85 240 95 170-65 210 80 175-70 200 88 230-60v667H0z"/>
+    <path fill="#2a6b4a" d="M0 490l190 65 240-70 220 96 180-72 230 86 210-78 180 74 280-61v550H0z"/>
+    <path fill="#31764f" d="M0 620l220 74 190-68 210 98 240-77 220 94 230-85 210 92 180-65v397H0z"/>
+  </g>
+
+  <path fill="url(#river)" d="M1210 0c-82 76-116 164-110 248 8 111 81 183 152 269 70 85 134 177 118 295-19 137-126 231-251 268-132 40-297 8-404-84-86-74-123-173-109-271 13-88 69-161 125-226 61-71 128-136 167-219 47-99 42-202 18-280z"/>
+  <path fill="#d8f2ff" opacity="0.28" d="M1248 0c-74 80-100 161-90 238 14 105 84 176 151 255 78 92 145 191 131 321-17 165-145 274-294 314-167 45-362 2-489-106 114 66 286 90 422 50 119-35 226-122 242-246 15-113-48-204-116-287-68-84-138-158-147-266-7-80 20-163 70-223z"/>
+
+  <rect width="1920" height="1080" fill="#000" opacity="0.12"/>
+  <rect width="1920" height="1080" filter="url(#softNoise)" opacity="0.55"/>
+</svg>
