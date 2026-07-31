@@ -1,11 +1,9 @@
 import * as mysql from "mysql2/promise";
-
 // Module-level pool: created once per Lambda execution context and reused
 // across warm invocations, eliminating a new TCP + TLS + auth handshake on
 // every request.  connectionLimit:1 is appropriate because a single Lambda
 // instance handles one request at a time.
 let pool = null;
-
 function getPool() {
     if (!pool) {
         pool = mysql.createPool({
@@ -21,7 +19,6 @@ function getPool() {
     }
     return pool;
 }
-
 export const handler = async (event) => {
     const headers = {
         "Access-Control-Allow-Origin": "*",
