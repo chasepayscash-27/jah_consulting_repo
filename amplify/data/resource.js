@@ -4,14 +4,11 @@ const schema = a.schema({
         .model({
         content: a.string(),
     })
-        .authorization((allow) => [allow.publicApiKey()]),
+        .authorization((allow) => [allow.authenticated("identityPool")]),
 });
 export const data = defineData({
     schema,
     authorizationModes: {
-        defaultAuthorizationMode: "apiKey",
-        apiKeyAuthorizationMode: {
-            expiresInDays: 30,
-        },
+        defaultAuthorizationMode: "iam",
     },
 });
